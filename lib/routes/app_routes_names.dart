@@ -1,3 +1,6 @@
-String introScreen = "/introScreen";
+// ============ APP ROUTE NAMES =============
 
-String loginScreen = "/loginScreen";
+String introScreen = "/introScreen"; // INTRO SCREEN
+
+// AUTH ROUTE NAME
+String loginScreen = "/loginScreen"; // LOGIN

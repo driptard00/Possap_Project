@@ -14,7 +14,7 @@ class IntroScreen extends StatelessWidget {
           width: Get.width,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/backround_image.png"),
+              image: AssetImage("assets/images/backround_image.png"), // BACKGROUND IMAGE
               fit: BoxFit.cover
             )
           ),
@@ -25,16 +25,16 @@ class IntroScreen extends StatelessWidget {
             color: const Color(0xff001659).withOpacity(0.8),
             child: Column(
               children: [
-                Image.asset("assets/images/banner.png",),
+                Image.asset("assets/images/banner.png",), // TOP BANNER
                 const SizedBox(
                   height: 50,
                 ),
-                Image.asset("assets/images/PossapLogo.png",),
+                Image.asset("assets/images/PossapLogo.png",), // POSSAP LOGO
                 const SizedBox(
                   height: 100,
                 ),
                 const Text(
-                  "Welcome to the Police Specialized Automation Services (POSSAP)",
+                  "Welcome to the Police Specialized Automation Services (POSSAP)", // INTRO WRITE UP
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -46,7 +46,7 @@ class IntroScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton.extended( // FLOATING ACTION BUTTON
         onPressed: (){
           Get.toNamed(loginScreen);
         },
