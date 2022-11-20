@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:possap_project/controllers/auth_state_controller.dart';
+import 'package:possap_project/routes/app_routes_names.dart';
 import 'package:possap_project/widgets/biometrics_auth.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -234,7 +235,9 @@ class LoginScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 14,
                                     child: InkWell(
-                                      onTap: (){},
+                                      onTap: (){
+                                        Get.toNamed(captureFingerPrint);
+                                      },
                                       child: Container(
                                         height: 60,
                                         decoration: BoxDecoration(
