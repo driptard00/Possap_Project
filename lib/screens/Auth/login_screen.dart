@@ -23,11 +23,11 @@ class LoginScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xffA5AFD0),
                     Color(0xff909FD3),
+                    Color(0xffA5AFD0),
                   ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 )
               ),
               child: Center(
@@ -236,7 +236,7 @@ class LoginScreen extends StatelessWidget {
                                     flex: 14,
                                     child: InkWell(
                                       onTap: (){
-                                        Get.toNamed(captureFingerPrint);
+                                        Get.toNamed(biometricEnrollment);
                                       },
                                       child: Container(
                                         height: 60,

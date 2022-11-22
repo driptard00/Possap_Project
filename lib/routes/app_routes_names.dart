@@ -6,7 +6,7 @@ String introScreen = "/introScreen"; // INTRO SCREEN
 String loginScreen = "/loginScreen"; // LOGIN
 
 // FINGERPRINT AUTH ROUTES
-String captureFingerPrint = "/captureFingerPrint"; // CAPTURE FINGER PRINT
+String biometricEnrollment = "/biometricEnrollment"; // BIOMETRIC ENROLLMENT
 String rightThumbAuth = "/rightThumbAuth"; // RIGHT THUMB AUTH
 String rightIndexAuth = "/rightIndexAuth"; // RIGHT INDEX AUTH
 String leftThumbAuth = "/leftThumbAuth"; // LEFT THUMB AUTH

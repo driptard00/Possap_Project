@@ -1,9 +1,14 @@
 import 'package:get/get.dart';
 import 'package:possap_project/routes/app_routes_names.dart';
-import 'package:possap_project/screens/Fingerprint%20Screens/capture_fingerprint.dart';
+import 'package:possap_project/screens/Fingerprint%20Screens/biometric_enrollment.dart';
 import 'package:possap_project/screens/Intro/intro_screen.dart';
 
 import '../screens/Auth/login_screen.dart';
+import '../screens/Fingerprint Screens/left_index.dart';
+import '../screens/Fingerprint Screens/left_thumb_auth.dart';
+import '../screens/Fingerprint Screens/right_index.dart';
+import '../screens/Fingerprint Screens/right_thumb_auth.dart';
+import '../screens/Fingerprint Screens/submitted_fingerprint.dart';
 
 List<GetPage> getPage = [
 
@@ -23,28 +28,33 @@ List<GetPage> getPage = [
 
   // FINGERPRINT AUTH SCREENS
   GetPage(
-    name: captureFingerPrint, 
-    page: ()=> CaptureFingerPrint() // CAPTURE FINGER PAGE ROUTE
+    name: biometricEnrollment, 
+    page: ()=> BiometricEnrollment() // CAPTURE FINGER PAGE ROUTE
   ),
 
-  // GetPage(
-  //   name: rightThumbAuth, 
-  //   page: ()=> RightThumbAuth() // RIGHT THUMB AUTH PAGE ROUTE
-  // ),
+  GetPage(
+    name: rightThumbAuth, 
+    page: ()=> RightThumbAuth() // RIGHT THUMB AUTH PAGE ROUTE
+  ),
 
-  // GetPage(
-  //   name: rightIndexAuth, 
-  //   page: ()=> RightIndexAuth() // RIGHT INDEX PAGE ROUTE
-  // ),
+  GetPage(
+    name: rightIndexAuth, 
+    page: ()=> RightIndexAuth() // RIGHT INDEX PAGE ROUTE
+  ),
 
-  // GetPage(
-  //   name: leftThumbAuth, 
-  //   page: ()=> LeftThumbAuth() // LEFT THUMB AUTH PAGE ROUTE
-  // ),
+  GetPage(
+    name: leftThumbAuth, 
+    page: ()=> LeftThumbAuth() // LEFT THUMB AUTH PAGE ROUTE
+  ),
 
-  // GetPage(
-  //   name: submittedSuccessful, 
-  //   page: ()=> SubmittedSuccessful() // SUBMITTED SUCCESSFUL
-  // ),
+  GetPage(
+    name: leftIndexAuth, 
+    page: ()=> LeftIndexAuth() // LEFT THUMB AUTH PAGE ROUTE
+  ),
+
+  GetPage(
+    name: submittedSuccessful, 
+    page: ()=> SubmittedSuccessful() // SUBMITTED SUCCESSFUL
+  ),
 
 ];
