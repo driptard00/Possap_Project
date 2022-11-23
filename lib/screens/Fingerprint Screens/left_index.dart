@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:possap_project/routes/app_routes_names.dart';
+import 'package:possap_project/widgets/fingerprint_submitted.dart';
+
+import '../../widgets/logout_popup.dart';
 
 class LeftIndexAuth extends StatelessWidget {
   const LeftIndexAuth({super.key});
@@ -18,7 +21,12 @@ class LeftIndexAuth extends StatelessWidget {
             children: [
               const SizedBox(height: 20,),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  showDialog(
+                    context: context, 
+                    builder: ((context) => const LogoutPopUp())
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
@@ -104,45 +112,93 @@ class LeftIndexAuth extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 161,
-                width: 130,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20)
-                ),
+              Stack(
+                children: [
+                  Container(
+                    height: 161,
+                    width: 130,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      child: Image.asset("assets/images/checked.png")
+                    ),
+                  )
+                ],
               ),
               const SizedBox(
                 height: 40,
               ),
-              InkWell(
-                onTap: (){
-                  Get.toNamed(submittedSuccessful);
-                },
-                child: Container(
-                  height: 50,
-                  width: 118,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff112666),
-                        Color(0xff032289),
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter
-                    )
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Continue",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed(rightIndexAuth);
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 118,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color(0xffFF0000),
+                            Color(0xffAF0000),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter
+                        )
                       ),
+                      child: const Center(
+                        child: Text(
+                          "Retry",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white
+                          ),
+                        ),
+                      )
                     ),
-                  )
-                ),
+                  ),
+                  InkWell(
+                    onTap: (){
+                      showDialog(
+                        context: context, 
+                        builder: ((context) => SubmittedSuccessful())
+                      );
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 118,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color(0xff112666),
+                            Color(0xff032289),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter
+                        )
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white
+                          ),
+                        ),
+                      )
+                    ),
+                  ),
+                ],
               )
             ],
           ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:possap_project/routes/app_routes_names.dart';
+import 'package:possap_project/widgets/logout_popup.dart';
 
-class SubmittedSuccessful extends StatelessWidget {
-  const SubmittedSuccessful({super.key});
+class FacialCaptureInfo extends StatelessWidget {
+  const FacialCaptureInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,12 @@ class SubmittedSuccessful extends StatelessWidget {
             children: [
               const SizedBox(height: 20,),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  showDialog(
+                    context: context, 
+                    builder: ((context) => LogoutPopUp())
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
@@ -61,7 +67,7 @@ class SubmittedSuccessful extends StatelessWidget {
                             child: Column(
                               children: const [
                                 Text(
-                                  "POSSAP BIOMETRIC ENROLLMENT",
+                                  "POSSAP BIOMETRIC ENROLMENT",
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
                                   style: TextStyle(
@@ -79,26 +85,31 @@ class SubmittedSuccessful extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 20,),
+                    const Text(
+                      "Capturing your Facial Biometrics will activate your device front camera. Well lightened environments will give best scan results",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                      ),
+                    ),
+                    const SizedBox(height: 10,),
+                    const Text(
+                      "Please remove any obstructions such as dark shades, face caps, face masks etc... and look into the camera.",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                      ),
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30,),
-              const Text(
-                "SUBMITTED SUCCESSFULLY",
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                style: TextStyle(
-                  fontSize: 32,
-                  color: Color(0xff112666),
-                  fontWeight: FontWeight.bold
-                ),
-              ),
-              const SizedBox(height: 30,),
-              Image.asset("assets/images/fingerprint_verification.png"),
-              const SizedBox(height: 100,),
+              const SizedBox(height: 50,),
+              Image.asset("assets/images/facial_bio.png"),
+              const SizedBox(height: 50,),
               InkWell(
                 onTap: (){
-                  Get.toNamed(leftIndexAuth);
+                  Get.toNamed(facialBiometricCapture);
                 },
                 child: Container(
                   height: 50,
@@ -116,7 +127,7 @@ class SubmittedSuccessful extends StatelessWidget {
                   ),
                   child: const Center(
                     child: Text(
-                      "Continue to Dashboard",
+                      "Capture Facial Biometrics",
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white

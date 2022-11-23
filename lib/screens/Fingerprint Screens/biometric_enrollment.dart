@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:possap_project/routes/app_routes_names.dart';
+import 'package:possap_project/widgets/logout_popup.dart';
 
 class BiometricEnrollment extends StatelessWidget {
   const BiometricEnrollment({super.key});
@@ -18,7 +19,12 @@ class BiometricEnrollment extends StatelessWidget {
             children: [
               const SizedBox(height: 20,),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  showDialog(
+                    context: context, 
+                    builder: ((context) => LogoutPopUp())
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

@@ -12,3 +12,7 @@ String rightIndexAuth = "/rightIndexAuth"; // RIGHT INDEX AUTH
 String leftThumbAuth = "/leftThumbAuth"; // LEFT THUMB AUTH
 String leftIndexAuth = "/leftIndexAuth"; // LEFT INDEX AUTH
 String submittedSuccessful = "/submittedSuccessful"; // SUBMITTED SUCCESSFUL
+
+// FACIAL BIOMETRIC CAPTURE
+String facialCaptureInfo = "/facialCaptureInfo"; // FACIAL CAPTURE INFO 
+String facialBiometricCapture = "/facialBiometricCapture"; // FACIAL BIOMETRIC CAPTURE
